@@ -1,0 +1,246 @@
+.saved-accounts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.saved-accounts__head {
+  display: flex;
+  align-items: center;
+}
+
+.saved-accounts__section {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.saved-accounts__link {
+  margin-left: auto;
+  border: none;
+  background: none;
+  padding: 0;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.saved-accounts__link:hover {
+  color: var(--accent-link-hover);
+  text-decoration: underline;
+}
+
+.saved-accounts__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.saved-accounts__group-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.saved-accounts__group-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.saved-accounts__handle {
+  flex: none;
+  display: inline-flex;
+  color: var(--faint);
+  cursor: grab;
+}
+
+.saved-accounts__handle:active {
+  cursor: grabbing;
+}
+
+.saved-accounts__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 12px;
+}
+
+.saved-accounts__card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 56px;
+  padding: 0 10px;
+  border-top: 2px solid transparent;
+  border-radius: 8px;
+  background: var(--panel);
+  cursor: pointer;
+}
+
+.saved-accounts__card--active {
+  background: var(--note-bg);
+}
+
+.saved-accounts__card--dragging {
+  background: var(--surface);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.saved-accounts__card--empty {
+  height: auto;
+  min-height: 56px;
+  justify-content: center;
+  text-align: center;
+  padding: 10px 16px;
+  background: transparent;
+  border: 1px dashed var(--border-color);
+  font-family: var(--font-ui);
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--faint-2);
+  cursor: default;
+}
+
+.saved-accounts__cards--over .saved-accounts__card--empty {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.saved-accounts__tag {
+  flex: none;
+  width: 34px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-radius: 5px;
+  padding: 3px 0;
+}
+
+.saved-accounts__tag--vps {
+  background: var(--tag-vps-bg);
+  color: var(--tag-vps-text);
+}
+
+.saved-accounts__tag--sakura {
+  background: var(--tag-sakura-bg);
+  color: var(--tag-sakura-text);
+}
+
+.saved-accounts__tag--xserver {
+  background: var(--tag-xserver-bg);
+  color: var(--tag-xserver-text);
+}
+
+.saved-accounts__tag--manual {
+  background: var(--tag-manual-bg);
+  color: var(--tag-manual-text);
+}
+
+.saved-accounts__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.saved-accounts__label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.saved-accounts__case {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.saved-accounts__actions {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.saved-accounts__status,
+.saved-accounts__rename,
+.saved-accounts__remove {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  margin: 0;
+  padding: 0;
+  border-radius: 7px;
+  border: var(--hairline);
+  background: var(--surface);
+  color: var(--faint);
+  cursor: pointer;
+}
+
+/* Preserve status behavior while its UI is temporarily out of scope. */
+.saved-accounts__status {
+  display: none;
+}
+
+.saved-accounts__status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.saved-accounts__status--enabled {
+  color: var(--success);
+}
+
+.saved-accounts__status--disabled {
+  color: var(--danger);
+}
+
+.saved-accounts__status--needs-update {
+  color: var(--warning);
+}
+
+.saved-accounts__status:hover {
+  background: var(--hover-bg);
+}
+
+.saved-accounts__rename svg,
+.saved-accounts__remove svg {
+  flex: none;
+}
+
+.saved-accounts__rename:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.saved-accounts__remove:hover {
+  background: var(--danger-bg);
+  color: var(--danger);
+}

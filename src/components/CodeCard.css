@@ -1,0 +1,155 @@
+.code-card {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  border: var(--hairline);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.code-card__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+}
+
+.code-card__filename {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  font-family: var(--font-mono);
+  flex: 1;
+  min-width: 0;
+}
+
+.code-card__controls {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.code-card__copy {
+  flex: none;
+  height: 34px;
+  padding: 0 14px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+  border-radius: 8px;
+  border: var(--hairline);
+  background: var(--surface);
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  transition:
+    background 0.12s ease,
+    border-color 0.12s ease;
+}
+
+.code-card__copy:hover {
+  background: var(--hover-bg);
+}
+
+.code-card__copy--done {
+  color: var(--success);
+}
+
+.code-card__copy:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.code-card__download {
+  flex: none;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: var(--hairline);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+
+.code-card__download:hover {
+  background: var(--hover-bg);
+}
+
+.code-card__download:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.code-card__body {
+  border-top: var(--hairline);
+}
+
+.code-card__banner {
+  padding: 9px 16px;
+  background: var(--code-hint-bg);
+  font-size: 11px;
+  color: var(--faint-2);
+  letter-spacing: 0.02em;
+  border-bottom: var(--hairline);
+}
+
+.code-card__code {
+  display: flex;
+  background: var(--code-bg);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.75;
+  min-width: 0;
+}
+
+.code-card__gutter {
+  padding: 14px 12px;
+  text-align: right;
+  color: var(--faint);
+  background: var(--gutter-bg);
+  border-right: var(--hairline);
+  user-select: none;
+}
+
+.code-card__source {
+  padding: 14px 16px;
+  color: var(--text);
+  white-space: pre;
+  overflow-x: auto;
+  flex: 1;
+  min-width: 0;
+}
+
+.code-card__token--keyword {
+  color: var(--tok-keyword);
+}
+.code-card__token--string {
+  color: var(--tok-string);
+}
+.code-card__token--comment {
+  color: var(--tok-comment);
+}
+
+/* Collapse copy labels at the shared mobile breakpoint to preserve code width. */
+@media (max-width: 1000px) {
+  .code-card__copy {
+    min-width: 34px;
+    padding: 0 10px;
+  }
+
+  .code-card__copy-label {
+    display: none;
+  }
+}

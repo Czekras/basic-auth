@@ -1,0 +1,191 @@
+@font-face {
+  font-family: 'Noto Sans JP';
+  src:
+    url('./assets/fonts/noto-sans-jp-v56-japanese_latin-regular.woff2')
+      format('woff2'),
+    url('./assets/fonts/NotoSansJP-VariableFont_wght.ttf')
+      format('truetype-variations');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src:
+    url('./assets/fonts/noto-sans-jp-v56-japanese_latin-500.woff2')
+      format('woff2'),
+    url('./assets/fonts/NotoSansJP-VariableFont_wght.ttf')
+      format('truetype-variations');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src:
+    url('./assets/fonts/noto-sans-jp-v56-japanese_latin-600.woff2')
+      format('woff2'),
+    url('./assets/fonts/NotoSansJP-VariableFont_wght.ttf')
+      format('truetype-variations');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src:
+    url('./assets/fonts/noto-sans-jp-v56-japanese_latin-700.woff2')
+      format('woff2'),
+    url('./assets/fonts/NotoSansJP-VariableFont_wght.ttf')
+      format('truetype-variations');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src:
+    url('./assets/fonts/roboto-mono-v31-latin-regular.woff2') format('woff2'),
+    url('./assets/fonts/RobotoMono-VariableFont_wght.ttf')
+      format('truetype-variations');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url('./assets/fonts/RobotoMono-VariableFont_wght.ttf')
+    format('truetype-variations');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --accent: #2f6fb0;
+  --accent-hover: #2a6299;
+  --accent-link-hover: #245a91;
+  --accent-disabled: #b9cfe3;
+  --accent-soft: #e4eef9;
+
+  --text: #1a1a1a;
+  --muted: #8c8c8c;
+  --muted-2: #6b6b68;
+  --faint: #c4c4c0;
+  --faint-2: #b5b5b2;
+
+  --surface: #ffffff;
+  --panel: #fafafa;
+  --quiet-bg: #f7f7f5;
+  --hover-bg: #e7e7e4;
+  --active-bg: #f0f0ee;
+  --code-bg: #fafaf8;
+  --code-hint-bg: #fbfbf9;
+  --gutter-bg: #f4f4f1;
+  --border-color: #e6e6e4;
+
+  --success: #3f8a4f;
+  --success-bg: #eaf5ec;
+  --warning: #b8960b;
+  --warning-bg: #faf1de;
+  --danger: #b4433a;
+  --danger-bg: #fbeceb;
+
+  /* Shared tokens keep toast and tooltip surfaces visually consistent. */
+  --notify-bg: #ffffff;
+  --notify-text: #1a1a1a;
+  --info-bg: #ecece8;
+  --info-bg-hover: #e0e0dc;
+  --note-bg: #f3f7fb;
+  --note-text: #33475b;
+
+  --tag-vps-bg: var(--accent-soft);
+  --tag-vps-text: var(--accent);
+  --tag-sakura-bg: #fbe9f0;
+  --tag-sakura-text: #b6477e;
+  --tag-xserver-bg: #e6f4f1;
+  --tag-xserver-text: #2f8a72;
+  --tag-manual-bg: #fdf0d5;
+  --tag-manual-text: #b5720a;
+
+  --tok-string: #3f8a4f;
+  --tok-keyword: #2563a8;
+  --tok-comment: #9aa0a6;
+
+  --font-ui: 'Noto Sans JP', sans-serif;
+  --font-mono: 'Roboto Mono', monospace;
+
+  --hairline: 0.5px solid var(--border-color);
+  --focus-ring: 0 0 0 3px rgba(47, 111, 176, 0.12);
+  --content-max: 1440px;
+  --toast-bottom: 28px;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+* {
+  box-sizing: border-box;
+  scrollbar-color: #d8d8d4 transparent;
+}
+
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+button {
+  transition:
+    background-color 0.12s ease,
+    border-color 0.12s ease,
+    color 0.12s ease;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d8d8d4;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c4c4c0;
+  background-clip: padding-box;
+}
+
+.icon {
+  flex: none;
+}
+
+@media (max-width: 1000px) {
+  body {
+    min-width: 370px;
+  }
+}

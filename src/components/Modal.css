@@ -1,0 +1,103 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 20, 20, 0.42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  z-index: 50;
+}
+
+.modal__panel {
+  width: 100%;
+  max-width: 640px;
+  min-height: 500px;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
+}
+
+/* Fill-mode panels let action rows stay pinned below variable-height content. */
+.modal__panel--fill {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modal__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: var(--hairline);
+  position: sticky;
+  top: 0;
+  background: var(--surface);
+}
+
+.modal__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.modal__title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.modal__subtitle {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.modal__close {
+  margin-left: auto;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+
+.modal__close:hover {
+  background: var(--hover-bg);
+}
+
+.modal__body {
+  padding: 20px;
+}
+
+.modal__body--fill {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+@media (max-width: 1000px) {
+  .modal {
+    padding: 40px 16px;
+  }
+
+  .modal__header {
+    padding: 16px;
+  }
+
+  .modal__body {
+    padding: 20px 16px;
+  }
+}

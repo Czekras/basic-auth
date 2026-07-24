@@ -1,0 +1,29 @@
+# Dependencies and generated output
+node_modules/
+dist/
+dist-ssr/
+coverage/
+.vite/
+
+# Local environment and OS files
+.env
+.env.*
+!.env.example
+*.local
+.DS_Store
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Local AI tooling and instructions
+.agents/
+.codex/
+CLAUDE.md
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

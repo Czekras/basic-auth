@@ -1,0 +1,202 @@
+.app-search {
+  position: relative;
+}
+
+.app-search__trigger {
+  display: inline-flex;
+  align-items: center;
+  height: 35px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 8px;
+  background: var(--quiet-bg);
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.12s ease;
+}
+.app-search__trigger:hover {
+  background: var(--hover-bg);
+}
+.app-search__trigger:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+.app-search__trigger-icon {
+  width: 16px;
+  height: 16px;
+  color: #5a5a57;
+}
+/* Compact mode keeps the trigger visible, so it carries the open state. */
+.app-search__trigger--active {
+  background: var(--accent-soft);
+}
+.app-search__trigger--active .app-search__trigger-icon {
+  color: var(--accent);
+}
+
+.app-search__field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 236px;
+  height: 35px;
+  padding: 0 12px;
+  border: 0.5px solid var(--accent);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--focus-ring);
+}
+.app-search__field-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--faint-2);
+}
+.app-search__input {
+  all: unset;
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--text);
+}
+.app-search__input::placeholder {
+  color: var(--faint-2);
+}
+.app-search__popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 30;
+  width: 300px;
+  background: var(--surface);
+  border: var(--hairline);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(26, 26, 26, 0.12);
+  overflow: hidden;
+}
+.app-search__popover[hidden] {
+  display: none;
+}
+
+.app-search__list {
+  /* Fits five catalog rows without scrolling while capping future growth. */
+  max-height: 284px;
+  overflow-y: auto;
+  padding: 6px;
+}
+
+.app-search__heading {
+  padding: 8px 10px 6px;
+}
+.app-search__heading-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--faint-2);
+}
+.app-search__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.08s ease;
+}
+.app-search__item--active {
+  background: var(--active-bg);
+}
+.app-search__item--soon {
+  opacity: 0.7;
+  cursor: default;
+}
+.app-search__item:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+.app-search__item--soon:focus-visible {
+  box-shadow: none;
+}
+
+.app-search__icon-wrap {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: var(--hairline);
+}
+.app-search__icon {
+  width: 16px;
+  height: 16px;
+  color: #5a5a57;
+}
+.app-search__name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
+.app-search__meta {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--faint);
+}
+.app-search__item--current .app-search__icon-wrap {
+  background: var(--accent-soft);
+  border-color: #cfe0f0;
+}
+.app-search__item--current .app-search__icon {
+  color: var(--accent);
+}
+.app-search__item--current .app-search__name {
+  color: var(--accent);
+  font-weight: 600;
+}
+.app-search__item--current .app-search__meta {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.app-search__item--soon .app-search__icon-wrap {
+  background: #f4f4f1;
+  border-color: #ededea;
+}
+.app-search__item--soon .app-search__icon {
+  color: var(--faint);
+}
+.app-search__item--soon .app-search__name {
+  color: var(--faint-2);
+}
+.app-search__item--soon .app-search__meta {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  color: var(--faint-2);
+}
+
+.app-search__empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 28px 10px;
+  font-size: 13px;
+  color: var(--faint-2);
+}
+.app-search__empty-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--faint);
+}
+
+/* Keep this breakpoint aligned with SP_QUERY in AppSearchPopover.jsx. */
+@media (max-width: 640px) {
+  .app-search__field {
+    width: 200px;
+  }
+}

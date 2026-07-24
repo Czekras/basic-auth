@@ -1,0 +1,91 @@
+/* The stack owns positioning because account deletions can queue multiple undo notices. */
+
+.toast-stack {
+  position: fixed;
+  left: max(24px, calc((100vw - var(--content-max, 1440px)) / 2));
+  bottom: var(--toast-bottom, 28px);
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 8px 8px 16px;
+  border-radius: 10px;
+  background: var(--notify-bg);
+  color: var(--notify-text);
+  border: var(--hairline);
+  box-shadow:
+    0 12px 34px rgba(0, 0, 0, 0.1),
+    0 2px 8px rgba(0, 0, 0, 0.04);
+  animation: toast-in 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.toast__message {
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.toast__divider {
+  width: 0.5px;
+  height: 20px;
+  margin: 0 2px;
+  background: var(--border-color);
+}
+
+.toast__undo {
+  flex: none;
+  height: 30px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.14s ease;
+}
+
+.toast__undo:hover {
+  background: var(--note-bg);
+}
+
+.toast__dismiss {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition:
+    background 0.14s ease,
+    color 0.14s ease;
+}
+
+.toast__dismiss:hover {
+  background: var(--hover-bg);
+  color: var(--muted-2);
+}

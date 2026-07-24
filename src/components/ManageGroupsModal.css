@@ -1,0 +1,168 @@
+.manage-groups-modal__list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.manage-groups-modal__row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 46px;
+  padding: 0 10px;
+  background: var(--surface);
+}
+
+/* The DnD placeholder breaks :last-child, so separators belong to adjacent rows. */
+.manage-groups-modal__row + .manage-groups-modal__row {
+  border-top: var(--hairline);
+}
+
+.manage-groups-modal__row:not(.manage-groups-modal__row--fixed):hover {
+  background: var(--panel);
+}
+
+.manage-groups-modal__row--dragging {
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.manage-groups-modal__handle {
+  flex: none;
+  display: inline-flex;
+  color: var(--faint);
+  cursor: grab;
+  user-select: none;
+}
+
+.manage-groups-modal__handle:hover {
+  color: var(--muted-2);
+}
+
+.manage-groups-modal__handle:active {
+  cursor: grabbing;
+}
+
+.manage-groups-modal__lock {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--faint-2);
+}
+
+.manage-groups-modal__name {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 6px;
+  padding: 7px 9px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--text);
+  outline: none;
+  transition:
+    background 0.12s ease,
+    border-color 0.12s ease,
+    box-shadow 0.12s ease;
+}
+
+.manage-groups-modal__name:hover {
+  background: var(--panel);
+  border-color: var(--border-color);
+}
+
+.manage-groups-modal__name:focus {
+  background: var(--surface);
+  border-color: var(--accent);
+  box-shadow: var(--focus-ring);
+}
+
+.manage-groups-modal__name--fixed {
+  color: var(--muted);
+  border-color: transparent;
+  background: transparent;
+}
+
+.manage-groups-modal__count {
+  flex: none;
+  font-size: 12px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.manage-groups-modal__count--empty {
+  color: var(--faint-2);
+}
+
+.manage-groups-modal__remove {
+  flex: none;
+  width: 19px;
+  display: inline-flex;
+  justify-content: center;
+  border: none;
+  background: none;
+  padding: 0;
+  color: var(--faint);
+  cursor: pointer;
+}
+
+.manage-groups-modal__remove:hover {
+  color: var(--danger);
+}
+
+/* Preserve the action column when the fixed row has no remove control. */
+.manage-groups-modal__remove--hidden {
+  visibility: hidden;
+  cursor: default;
+}
+
+.manage-groups-modal__new {
+  display: flex;
+  flex: none;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: var(--hairline);
+}
+
+.manage-groups-modal__new-input {
+  flex: 1;
+  min-width: 0;
+  height: 38px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: var(--hairline);
+  background: var(--surface);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--text);
+  outline: none;
+}
+
+.manage-groups-modal__new-input:focus {
+  border-color: var(--accent);
+  box-shadow: var(--focus-ring);
+}
+
+.manage-groups-modal__new-save {
+  flex: none;
+  height: 38px;
+  padding: 0 16px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #ffffff;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.manage-groups-modal__new-save:disabled {
+  background: var(--accent-disabled);
+  cursor: not-allowed;
+}
